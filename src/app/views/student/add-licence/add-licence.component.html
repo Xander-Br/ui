@@ -1,0 +1,12 @@
+<ngx-qrcode *ngIf="qrShowed"
+  [elementType]="elementType"
+  [errorCorrectionLevel]="correctionLevel"
+  [value]="value"
+  cssClass="bshadow"></ngx-qrcode>
+
+<div *ngIf="!qrShowed" id="centered-middle">
+  <h3>You don't seem to have a licence !</h3>
+  <button mat-flat-button color="primary" (click)="addLicence()">Register now</button>
+</div>
+
+

@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  margin: 10px 10px;
+}
+
+#hm > * {
+  width: 40%;
+}
+
+#hm {
+  display: flex;
+  justify-content: space-evenly;
+}

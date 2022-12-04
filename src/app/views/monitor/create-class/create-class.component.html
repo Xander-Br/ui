@@ -1,0 +1,32 @@
+<form [formGroup]="createCourseForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Student</mat-label>
+    <mat-select formControlName="student">
+      <mat-option [value]="student" *ngFor="let student of students">{{student.firstName}} {{student.lastName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <input formControlName="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <div id="hm">
+  <mat-form-field appearance="outline">
+    <input formControlName="hour" matInput placeholder="hh">
+  </mat-form-field>
+    <span style="text-align: center"><h3>:</h3></span>
+  <mat-form-field appearance="outline">
+    <input formControlName="minute" matInput placeholder="mm">
+  </mat-form-field>
+  </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Duration</mat-label>
+    <mat-select formControlName="duration">
+      <mat-option *ngFor="let duration of durations" [value]="duration">
+        {{duration}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button [disabled]="createCourseForm.invalid" mat-flat-button color="primary" (click)="createCourse()">Set a new course</button>
+</form>
+

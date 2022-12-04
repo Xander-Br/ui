@@ -1,0 +1,26 @@
+.profile-picture {
+
+  //background img
+  background: url(https://www.w3schools.com/howto/img_avatar.png);
+  //resize img
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+
+#student-profile {
+  display: flex;
+  //align text vertically
+  align-items: center;
+}
+
+#content{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+mat-card-subtitle > p {
+  margin-left: 10px;
+  margin-top: 0;
+}

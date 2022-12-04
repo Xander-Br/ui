@@ -1,0 +1,30 @@
+<router-outlet></router-outlet>
+
+<mat-tab-group>
+  <mat-tab label="Students">
+    <app-student-card *ngFor="let student of students" [student]="student"></app-student-card>
+  </mat-tab>
+  <mat-tab label="Incoming Course">
+    <app-monitor-course-card *ngFor="let course of courses" [course]="course"></app-monitor-course-card>
+  </mat-tab>
+</mat-tab-group>
+
+<mat-toolbar id="bottom-action-bar">
+  <button mat-icon-button [routerLink]="['home']">
+    <mat-icon>home</mat-icon>
+  </button>
+  <button mat-icon-button [routerLink]="['calendar']">
+    <mat-icon>calendar_month</mat-icon>
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>person</mat-icon></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/']">Logout</button>
+  </mat-menu>
+  <div id="add-fab" (click)="openDialog()">
+    <button mat-fab color="primary" aria-label="Example icon button with a bookmark icon">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+</mat-toolbar>
